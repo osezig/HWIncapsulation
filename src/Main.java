@@ -24,6 +24,9 @@ public class Main {
         System.out.println("Домашнее задание 1");
         System.out.println("Задание 1");
         max.printOut();
+        ann.printOut();
+        kate.printOut();
+        artem.printOut();
         Human vova = new Human(LocalDate.now().getYear()-21,"Владимир", "Казань", "null");
         vova.printOut();
 
@@ -34,7 +37,6 @@ public class Main {
         Flower gipsofila = new Flower("Гипсофила","", "Турция", 19.5, 10);
 
         System.out.printf(rozaObyknovennaya +"\n" + hrizantema + "\n" + pion + "\n" + gipsofila );
-
 
 
         System.out.println("Домашнее задание 2");
