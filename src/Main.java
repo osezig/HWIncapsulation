@@ -10,15 +10,15 @@ public class Main {
         Human artem = new Human(1995, "Артем", "Москва", "директором по развитию бизнеса");
 
         Car lada = new Car("Lada ", " Granta ", 1.7, " Желтый ", 2015, " Россия",
-                "Механическая", "Седан","в123рр102",5,0);
+                "Механическая", "Седан","ю123юю123",5,0);
         Car audi = new Car("Audi ", " A8 ", 3.0, " Черный ", 2020, " Германия",
-                "Автоматическая", "Купе","в4а65кр777",2,3);
+                "Автоматическая", "Купе","а3а88кр123",2,3);
         Car bmw = new Car("BMW ", " Z8 ", 3.0, " Черный ", 2021, " Германия",
-                "Автоматическая", "Купе","в123рр795",2,1);
+                "Автоматическая", "Купе","щ123456",2,1);
         Car kia = new Car("KIA ", " Sportage ", 2.4, " Красный ", 2018, " Южная Корея",
-                "Автоматическая", "Кроссовер","в123нр799",5,0);
+                "Автоматическая", "Кроссовер","в123вв123",5,0);
         Car hyundai  = new Car("Hyundai ", " Avante ", 1.6, " Оранжевый ", 2016, " Южная Корея",
-                "Механическая", "Седан","в123рр777",5,1);
+                "Механическая", "Седан","ш123шш123",5,1);
 
 
         System.out.println("Домашнее задание 1");
@@ -46,11 +46,26 @@ public class Main {
 
         System.out.println("Домашнее задание 3");
         System.out.println("Задание 2");
-        Car.Insurance audiIns = audi.new Insurance(2021, 50000, 231954893);
-        Car.Insurance ladaIns = lada.new Insurance(2022, 10000, 24536872);
+        Car.Insurance audiIns = audi.new Insurance(2021, 330000, 331854894);
+        Car.Insurance ladaIns = lada.new Insurance(2022, 20000, 44536872);
+        Car.Insurance bmwIns = bmw.new Insurance(2021, 50000, 2317548);
+        Car.Insurance kiaIns = kia.new Insurance(2020, 8000, 931954);
+        Car.Insurance hyundaiIns = hyundai.new Insurance(2021, 40000, 999999999);
         audi.setInsurance(audiIns);
         lada.setInsurance(ladaIns);
-
+        bmw.setInsurance(bmwIns);
+        kia.setInsurance(kiaIns);
+        hyundai.setInsurance(hyundaiIns);
+        audi.checkValidityInsurance();
+        lada.checkValidityInsurance();
+        bmw.checkValidityInsurance();
+        kia.checkValidityInsurance();
+        hyundai.checkValidityInsurance();
+        audi.checkNumInsurance();
+        lada.checkNumInsurance();
+        bmw.checkNumInsurance();
+        kia.checkNumInsurance();
+        hyundai.checkNumInsurance();
 
     }
 }

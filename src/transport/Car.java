@@ -1,5 +1,7 @@
 package transport;
 
+import java.time.LocalDate;
+
 public class Car {
     private String brand;
     private String model;
@@ -239,6 +241,64 @@ public class Car {
         this.insurance = insurance;
 
     }
+    @Override
+    public String toString() {
+        return "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", color='" + color + '\'' +
+                ", year=" + year +
+                ", country='" + country + '\'' +
+                ", transmission='" + transmission + '\'' +
+                ", bodyType='" + bodyType + '\'' +
+                ", registrationNum='" + registrationNum + '\'' +
+                ", numOfSeat=" + numOfSeat +
+                ", winterTires=" + winterTires +
+                '}';
+    }
+
+    public void changeTires(int winterTires) {
+        if (winterTires > 1 || winterTires < 0) {
+            winterTires = 1;
+        }
+        this.winterTires = winterTires == 1;
+    }
+
+
+    public void checkRegistrationNum() {
+
+        if (this.registrationNum.length() == 9) {
+            if (!this.registrationNum.substring(5, 6).matches("[а-я]")) {
+                System.out.println("Номер введен неверно");
+            } else if (!this.registrationNum.substring(0, 1).matches("[а-я]")) {
+                System.out.println("Номер введен неверно");
+            } else if (!this.registrationNum.substring(2, 4).matches("[\\d]+")) {
+                System.out.println("Номер введен неверно");
+            } else if (!this.registrationNum.substring(7, 9).matches("[\\d]+")) {
+                System.out.println("Номер введен неверно");
+            } else {
+                System.out.println("Номер введен верно");
+            }
+        } else {
+            System.out.println("Номер введен неверно");
+        }
+    }
+
+    public void checkNumInsurance() {
+        String tmp = Integer.toString(this.insurance.getNumber());
+        if (tmp.length() != 9) {
+            System.out.println("Номер страховки введен не корректно");
+        } else {
+            System.out.println("Номер страховки верный");
+        }
+    }
+
+    public void checkValidityInsurance() {
+        if (this.insurance.getValidity() < LocalDate.now().getYear()) {
+            System.out.println("Нужно срочно ехать оформлять новую страховку");
+        }
+    }
+
 
 }
 
